@@ -4,43 +4,93 @@ import no.hvl.dat100.common.TODO;
 import no.hvl.dat100.oppgave1.*;
 
 public class Blogg {
+    Innlegg[] innleggtabell;
+    int nesteledig;
 
-	// TODO: objektvariable 
 
 	public Blogg() {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+        innleggtabell = new Innlegg[20];
 	}
 
 	public Blogg(int lengde) {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+        innleggtabell = new Innlegg[lengde];
 	}
 
 	public int getAntall() {
-		throw new UnsupportedOperationException(TODO.method());
+        int pos = 0;
+        int count = 0;
+        while (pos < innleggtabell.length) {
+            if (innleggtabell[pos] != null) {
+                count += 1;
+            }
+            pos++;
+        }
+        return count;
 	}
 	
 	public Innlegg[] getSamling() {
-		throw new UnsupportedOperationException(TODO.method());
-
+        return innleggtabell;
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
+        int pos = 0;
+        boolean funnet = false;
 
-		throw new UnsupportedOperationException(TODO.method());
+        while (pos < innleggtabell.length && !funnet){
+            for (Innlegg tabell : innleggtabell) {
+                if (tabell.getId() == innlegg.getId()) {
+                    funnet = true;
+                }
+                pos++;
+            }
+        }
+        return pos;
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+        int pos = 0;
+        boolean funnet = false;
+
+        while (pos < innleggtabell.length && !funnet){
+            for (Innlegg tabell : innleggtabell) {
+                if (tabell.getId() == innlegg.getId()) {
+                    funnet = true;
+                }
+                pos++;
+            }
+        }
+        return funnet;
 	}
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
+		boolean ledig = false;
+        int pos = 0;
 
+        while (pos < innleggtabell.length && !ledig){
+            for (pos = 0; pos < innleggtabell.length; pos++) {
+                if (innleggtabell[pos] == null) {
+                    ledig = true;
+                }
+            }
+            ledig = false;
+        }
+
+        return ledig;
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
+        int pos = 0;
+        boolean funnet = false;
 
-		throw new UnsupportedOperationException(TODO.method());
+        while (pos < innleggtabell.length && !funnet){
+            for (Innlegg tabell : innleggtabell) {
+                if (tabell.getId() != innlegg.getId()) {
+                    innleggtabell[nesteledig] = innleggtabell[pos];
+                }
+                pos++;
+            }
+        }
+        return funnet;
 	}
 	
 	public String toString() {
