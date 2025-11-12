@@ -119,7 +119,7 @@ public class TestBlogg {
 		samling.leggTil(innlegg1);
 		samling.leggTil(innlegg2);
 		
-		String str = "2\n" + 
+		String str = "2\n" +
 				"TEKST\n1\nOle Olsen\n23-10\n0\nen tekst\n" + 
 				"BILDE\n2\nOline Olsen\n24-10\n0\net bilde\nhttp://www.picture.com/oo.jpg\n";
 		
