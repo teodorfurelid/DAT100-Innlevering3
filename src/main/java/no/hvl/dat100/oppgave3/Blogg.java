@@ -54,9 +54,10 @@ public class Blogg {
 
         for (int pos = 0; pos < antall; pos++) {
             if (innleggtabell[pos].erLik(innlegg)) {
-                funnet = true;
+                return true;
             }
         }
+
         return funnet;
 	}
 
@@ -84,14 +85,27 @@ public class Blogg {
         return lagttil;
 
 	}
-	
+	/*
 	public String toString() {
         String s = "";
         for (int i = 0; i < antall; i++){
-            s = innleggtabell[i].toString();
+            if (i == 0){
+                System.out.println(antall);
+            }
+            System.out.print(innleggtabell[i]);
         }
         return s;
+
 	}
+*/
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(antall).append("\n");
+        for (int i = 0; i < antall; i++) {
+            sb.append(innleggtabell[i].toString());
+        }
+        return sb.toString();
+    }
 
 	// valgfrie oppgaver nedenfor
 	
